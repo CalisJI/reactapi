@@ -24,11 +24,4 @@ const timer = setInterval(() => {
 app.get("/api/test", (req, res) => {
   res.json({ message: dateTime });
 });
-app.get("api/test", (req, res) => {
-  var sql = "SELECT * FROM news ORDER BY id DESC";
-  connection.query(sql, function (err, results) {
-    if (err) console.log(err);
-    res.json({ news: results });
-  });
-});
 app.listen(4000, () => console.log("App listening on port 4000"));
